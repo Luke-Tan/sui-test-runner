@@ -16,12 +16,11 @@ on:
 jobs:
   run-tests:
     runs-on: ubuntu-latest
+    container:
+      image: mysten/sui-node:latest # Using the Sui Node Docker image
     steps:
       - uses: actions/checkout@v3
-      - run: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-      - name: Install Sui
-        run: cargo install --locked --git https://github.com/MystenLabs/sui.git --branch testnet sui
-      - name: Run aptos move test
+      - name: Run sui move test
         run: sui move test --ignore-compile-warnings > output.txt
         continue-on-error: true
       - name: Call webhook
