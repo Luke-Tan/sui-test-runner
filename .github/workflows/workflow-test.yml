@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run sui move test
-        run: sui move test --silence-warnings
+        run: sui move test
         continue-on-error: true
       - name: Call webhook
         run: |
