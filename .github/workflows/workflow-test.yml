@@ -28,7 +28,7 @@ jobs:
         run: sui move test --silence-warnings > output.txt
         continue-on-error: true
       - name: Install python
-        run: apt update && apt install python3
+        run: apt update -y && apt install python3 -y
       - name: Call webhook
         run: |
           webhook_url="https://mod.overmind.xyz/api/handle-test-run"
