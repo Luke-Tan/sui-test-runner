@@ -20,6 +20,9 @@ jobs:
       image: mysten/sui-tools:ci # Using the Sui Node Docker image
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
       - name: Install Git
         run: |
           apt-get update
