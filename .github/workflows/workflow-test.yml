@@ -20,8 +20,8 @@ jobs:
       image: mysten/sui-tools:ci # Using the Sui Node Docker image
     steps:
       - uses: actions/checkout@v3
-      - name: Enable Debug Logging
-        run: echo "DEBUG_LOGGING=true" >> $GITHUB_ENV
+      - name: random clone
+        run: git clone https://github.com/MystenLabs/sui.git
       - name: Run sui move test
         run: sui move test
         continue-on-error: true
