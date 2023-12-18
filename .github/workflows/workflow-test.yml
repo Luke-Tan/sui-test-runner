@@ -17,7 +17,7 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest
     container:
-      image: mysten/sui-tools:ci # Using the Sui Node Docker image
+      image: mysten/sui-services:ci # Using the Sui Node Docker image
     steps:
       - uses: actions/checkout@v3
       - name: Run sui move test
