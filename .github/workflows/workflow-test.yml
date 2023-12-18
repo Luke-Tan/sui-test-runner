@@ -20,6 +20,10 @@ jobs:
       image: mysten/sui-tools:ci # Using the Sui Node Docker image
     steps:
       - uses: actions/checkout@v3
+      - name: Install Git
+        run: |
+          sudo apt-get update
+          sudo apt-get install git -y
       - name: random clone
         run: git clone https://github.com/MystenLabs/sui.git
       - name: Run sui move test
